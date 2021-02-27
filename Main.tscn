@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://prefabs/Desert.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://ProceduralDesert.gd" type="Script" id=2]
 [ext_resource path="res://assets/environments/desert_env.tres" type="Environment" id=3]
 [ext_resource path="res://prefabs/Car.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=5]
+[ext_resource path="res://prefabs/desert/RoadTile.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 5 )
@@ -14,12 +15,16 @@ mesh_library = ExtResource( 1 )
 cell_size = Vector3( 256, 256, 256 )
 cell_center_y = false
 data = {
-"cells": PoolIntArray( 0, 0, 1 )
+"cells": PoolIntArray( 0, 0, 536870914 )
 }
 script = ExtResource( 2 )
 __meta__ = {
 "_editor_clip_": 0
 }
+
+[node name="RoadTile" parent="DesertMap" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 128 )
+empty = true
 
 [node name="Objects" type="Spatial" parent="DesertMap"]
 
@@ -27,7 +32,7 @@ __meta__ = {
 environment = ExtResource( 3 )
 
 [node name="Car" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 128 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 0, 10 )
 
 [node name="GenerationTimer" type="Timer" parent="."]
 wait_time = 0.5

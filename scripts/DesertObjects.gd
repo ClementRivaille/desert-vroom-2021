@@ -3,7 +3,8 @@ class_name DesertObjects
 
 export(Array, PackedScene) var common: Array = []
 export(Array, PackedScene) var rare: Array = []
-export(Array, PackedScene) var road: Array = []
+
+var road: PackedScene = preload("res://prefabs/desert/RoadTile.tscn")
 
 export(bool) var road_tile = false
 
@@ -12,6 +13,25 @@ export(int) var average_nb := 4
 var TILE_SIZE = 256;
 
 func _ready():
+  if !road_tile:
+    distribute_objects()
+  else:
+    var road_node: RoadTile = road.instance()
+    add_child(road_node)
+    
+    # Add one random obkects why not
+    if randf() > 0.5:
+      var prefab = common[randi()%common.size()]
+      var child: Spatial = prefab.instance()
+      var left = -1 if randf() > 0.5 else 1
+      child.transform.origin = Vector3(
+        left * (road_node.ROAD_WIDTH + 10 + randf() * (TILE_SIZE/2 - road_node.ROAD_WIDTH)),
+        0,
+      -TILE_SIZE/2 + randf() * TILE_SIZE)
+      add_child(child)
+  
+  
+func distribute_objects():
   var nb_items := average_nb + -2 + randi()%4
   var picked_items := []
   

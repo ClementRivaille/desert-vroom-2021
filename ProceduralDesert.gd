@@ -42,4 +42,6 @@ func generate_world():
         var objects_position := map_to_world(x, 0, y)
         var tile_objects: DesertObjects = desert_objects.instance()
         tile_objects.transform.origin = objects_position
+        if x == 0:
+          tile_objects.road_tile = true
         objects.add_child(tile_objects)

@@ -35,6 +35,11 @@ _global_script_classes=[ {
 "path": "res://ProceduralDesert.gd"
 }, {
 "base": "Spatial",
+"class": "RoadTile",
+"language": "GDScript",
+"path": "res://scripts/RoadTile.gd"
+}, {
+"base": "Spatial",
 "class": "SpriteBody",
 "language": "GDScript",
 "path": "res://scripts/SpriteBody.gd"
@@ -45,6 +50,7 @@ _global_script_class_icons={
 "Main": "",
 "MouseCamera": "",
 "ProceduralDesert": "",
+"RoadTile": "",
 "SpriteBody": ""
 }
 

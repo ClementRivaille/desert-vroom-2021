@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/sprites/barrier.png" type="Texture" id=1]
+[ext_resource path="res://scripts/RoadTile.gd" type="Script" id=2]
+[ext_resource path="res://assets/textures/road.png" type="Texture" id=3]
+[ext_resource path="res://prefabs/desert/Thumbleweed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/desert/Grass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/desert/Rock3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/desert/Rock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/desert/Gravels.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/desert/Stop.tscn" type="PackedScene" id=9]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 1, 4, 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 32, 256 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 8, 1, 1 )
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
+size = Vector2( 256, 5 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 128, 0.3, 1.3 )
+
+[node name="RoadTile" type="Spatial"]
+script = ExtResource( 2 )
+obstacles = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 8 ) ]
+
+[node name="Road1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0.05, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Road2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.05, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Barrier" type="MeshInstance" parent="."]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, 0, 2.5, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Barrier"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Barrier/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, -4.32443e-21, 0, -4.32445e-21, 1, -4.48927e-20, 4.76312e-08, 1.41636 )
+shape = SubResource( 5 )
+
+[node name="Barrier2" type="MeshInstance" parent="."]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -34, 2.5, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Barrier2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Barrier2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, -4.32443e-21, 0, -4.32443e-21, 1, 0, 0, 1.416 )
+shape = SubResource( 5 )
+
+[node name="Barrier3" type="MeshInstance" parent="."]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, 34, 2.5, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Barrier3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Barrier3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, -4.32443e-21, 0, -4.32443e-21, 1, 0, 0, 1.416 )
+shape = SubResource( 5 )
