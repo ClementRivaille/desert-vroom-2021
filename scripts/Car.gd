@@ -4,7 +4,7 @@ class_name Car
 onready var camera: MouseCamera = $CameraTarget/Camera
 onready var target: Spatial = $CameraTarget
 
-const STEER_SPEED = 2
+const STEER_SPEED = 1
 const STEER_LIMIT = 0.1
 
 var steer_target = 0

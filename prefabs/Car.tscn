@@ -4,15 +4,16 @@
 [ext_resource path="res://scripts/Car.gd" type="Script" id=2]
 [ext_resource path="res://scripts/MouseCamera.gd" type="Script" id=3]
 
-[sub_resource type="PhysicsMaterial" id=2]
-friction = 0.5
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 0.2
 bounce = 0.2
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 1.854, 1.466, 3.978 )
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.854, 1.26533, 3.978 )
 
 [node name="Car" type="VehicleBody"]
-physics_material_override = SubResource( 2 )
+mass = 20.0
+physics_material_override = SubResource( 3 )
 script = ExtResource( 2 )
 engine_force_value = 20.0
 
@@ -21,7 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.675, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.812, -0.098 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="VehicleWheel" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.862, 0.701503, 2.64128 )
@@ -29,6 +30,8 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.691
 wheel_rest_length = 0.2
+suspension_travel = 0.15
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel3" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.862, 0.702, 2.641 )
@@ -36,41 +39,54 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.691
 wheel_rest_length = 0.2
+suspension_travel = 0.15
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel2" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.862, 0.701503, -2.50008 )
 use_as_traction = true
 wheel_radius = 0.691
 wheel_rest_length = 0.2
+suspension_travel = 0.15
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel4" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.862, 0.702, -2.5 )
 use_as_traction = true
 wheel_radius = 0.691
 wheel_rest_length = 0.2
+suspension_travel = 0.15
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel8" type="VehicleWheel" parent="."]
 transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 1.862, 2.9002, 2.641 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.691
+suspension_travel = 0.1
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel7" type="VehicleWheel" parent="."]
 transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, -1.862, 2.9, 2.641 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.691
-wheel_rest_length = 0.527
+suspension_travel = 0.1
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel6" type="VehicleWheel" parent="."]
 transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 1.862, 2.9, -2.5 )
 use_as_traction = true
 wheel_radius = 0.691
+suspension_travel = 0.1
+suspension_stiffness = 80.0
 
 [node name="VehicleWheel5" type="VehicleWheel" parent="."]
 transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, -1.862, 2.9, -2.5 )
 use_as_traction = true
 wheel_radius = 0.691
+suspension_travel = 0.1
+suspension_stiffness = 80.0
 
 [node name="CameraTarget" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.93782, -1.05896 )

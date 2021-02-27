@@ -8,7 +8,7 @@ onready var camera: Camera = $Gimbal/Camera
 
 func _ready():
   set_as_toplevel(true)
-  camera.look_at_from_position(camera.transform.origin, transform.origin, Vector3.UP)
+  camera.look_at_from_position(camera.global_transform.origin, global_transform.origin, Vector3.UP)
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
   
 
