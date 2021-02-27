@@ -24,3 +24,6 @@ func _input(event):
     Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
   if event.is_action_pressed("click") && Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
       Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func get_lateral_direction() -> Vector3:
+  return camera.global_transform.basis.x

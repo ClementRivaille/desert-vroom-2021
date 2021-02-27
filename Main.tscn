@@ -33,6 +33,7 @@ environment = ExtResource( 3 )
 
 [node name="Car" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 0, 10 )
+gravity_scale = 1.0
 
 [node name="GenerationTimer" type="Timer" parent="."]
 wait_time = 0.5
