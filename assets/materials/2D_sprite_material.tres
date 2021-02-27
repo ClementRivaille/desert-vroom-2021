@@ -1,0 +1,11 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/cactus_2.png" type="Texture" id=1]
+
+[resource]
+flags_transparent = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_billboard_mode = 2
+params_billboard_keep_scale = true
+albedo_texture = ExtResource( 1 )

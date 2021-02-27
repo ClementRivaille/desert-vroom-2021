@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset>
+	<contributor>
+		<author>Anonymous</author>
+		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
+	</contributor>
+	<created>2021-02-27T00:03:01Z</created>
+	<modified>2021-02-27T00:03:01Z</modified>
+	<unit meter="1.0" name="meter"/>
+	<up_axis>Z_UP</up_axis>
+</asset>
+<library_images>
+	<image id="id-image-3" name="Untitled.001">
+		<init_from>mustang.png</init_from>
+	</image>
+</library_images>
+<library_effects>
+	<effect id="id-fx-2" name="Material.003-fx">
+		<profile_COMMON>
+			<newparam sid="id-fx_surf-4">
+				<surface type="2D">
+					<init_from>id-image-3</init_from>
+					<format>A8R8G8B8</format>
+				</surface>
+			</newparam>
+			<newparam sid="id-fx_sampler-5">
+				<sampler2D>
+					<source>id-fx_surf-4</source>
+				</sampler2D>
+			</newparam>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  1.0 0.9425285458564758 0.854992687702179 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<texture texture="id-fx_sampler-5" texcoord="CHANNEL1"/>
+					</diffuse>
+					<specular>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>1.2</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>1</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="id-fx-9" name="Material-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.800000011920929 0.800000011920929 0.800000011920929 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.6400000095367432 0.6400000095367432 0.6400000095367432 0.8 </color>
+					</diffuse>
+					<specular>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>1.2</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>1</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+</library_effects>
+<library_materials>
+	<material id="id-material-6" name="Material.003">
+		<instance_effect url="#id-fx-2"/>
+	</material>
+	<material id="id-material-10" name="Material">
+		<instance_effect url="#id-fx-9"/>
+	</material>
+</library_materials>
+<library_geometries>
+	<geometry id="id-mesh-7" name="Cube.002">
+		<mesh>
+			<source id="id-mesh-7-positions">
+				<float_array id="id-mesh-7-positions-array" count="204"> 2.3110387325286865 -2.893641471862793 0.8882383108139038 2.3110387325286865 -2.893641471862793 -2.0816736221313477 2.3110387325286865 -0.893641471862793 -2.0816736221313477 2.3110387325286865 -0.893641471862793 0.8882383108139038 2.3110387325286865 -4.893641471862793 0.8882383108139038 2.3110387325286865 -4.893641471862793 -2.0816736221313477 -2.3110387325286865 -4.893641471862793 0.8882383108139038 -2.3110387325286865 -4.893641471862793 -2.0816736221313477 2.3110387325286865 -4.893641471862793 -2.0816736221313477 2.3110387325286865 -4.893641471862793 0.8882383108139038 2.3110387325286865 1.106358528137207 -2.0816736221313477 2.3110387325286865 1.106358528137207 0.8882383108139038 2.3110387325286865 3.106358528137207 -2.0816736221313477 2.3110387325286865 3.106358528137207 0.8882383108139038 2.3110387325286865 -0.893641471862793 0.8882383108139038 2.3110387325286865 1.106358528137207 0.8882383108139038 2.3110387325286865 1.106358528137207 2.386870861053467 2.3110387325286865 -0.893641471862793 2.386870861053467 2.3110387325286865 3.106358528137207 0.8882383108139038 -2.3110387325286865 3.106358528137207 0.8882383108139038 -2.3110387325286865 1.106358528137207 0.8882383108139038 2.3110387325286865 1.106358528137207 0.8882383108139038 2.3110387325286865 -0.893641471862793 2.386870861053467 -2.3110387325286865 -0.893641471862793 2.386870861053467 -2.3110387325286865 -1.5078706741333008 2.386870861053467 2.3110387325286865 -1.5078706741333008 2.386870861053467 2.3110387325286865 -0.893641471862793 2.386870861053467 2.3110387325286865 -1.5078706741333008 2.386870861053467 2.3110387325286865 1.106358528137207 2.386870861053467 -2.3110387325286865 1.106358528137207 2.386870861053467 2.3110387325286865 -1.5078706741333008 2.386870861053467 -2.3110387325286865 -1.5078706741333008 2.386870861053467 -2.3110387325286865 -2.893641471862793 0.8882383108139038 2.3110387325286865 -2.893641471862793 0.8882383108139038 2.3110387325286865 5.115782737731934 -2.0816736221313477 -2.3110387325286865 5.115782737731934 -2.0816736221313477 -2.3110387325286865 5.115782737731934 0.8882383108139038 2.3110387325286865 5.115782737731934 0.8882383108139038 2.3110387325286865 5.115782737731934 -2.0816736221313477 2.3110387325286865 5.115782737731934 0.8882383108139038 -2.3110387325286865 1.106358528137207 0.8882383108139038 -2.3110387325286865 1.106358528137207 2.386870861053467 2.3110387325286865 1.106358528137207 2.386870861053467 2.3110387325286865 1.106358528137207 0.8882383108139038 -2.3110387325286865 -4.893641471862793 0.8882383108139038 2.3110387325286865 -4.893641471862793 0.8882383108139038 2.3110387325286865 -2.893641471862793 0.8882383108139038 -2.3110387325286865 -2.893641471862793 0.8882383108139038 -2.3110387325286865 -2.893641471862793 0.8882383108139038 -2.3110387325286865 -0.893641471862793 0.8882383108139038 -2.3110387325286865 -0.893641471862793 -2.0816736221313477 -2.3110387325286865 -2.893641471862793 -2.0816736221313477 -2.3110387325286865 -4.893641471862793 -2.0816736221313477 -2.3110387325286865 -4.893641471862793 0.8882383108139038 -2.3110387325286865 1.106358528137207 0.8882383108139038 -2.3110387325286865 1.106358528137207 -2.0816736221313477 -2.3110387325286865 3.106358528137207 0.8882383108139038 -2.3110387325286865 3.106358528137207 -2.0816736221313477 -2.3110387325286865 -0.893641471862793 0.8882383108139038 -2.3110387325286865 -0.893641471862793 2.386870861053467 -2.3110387325286865 1.106358528137207 2.386870861053467 -2.3110387325286865 1.106358528137207 0.8882383108139038 -2.3110387325286865 -1.5078706741333008 2.386870861053467 -2.3110387325286865 -0.893641471862793 2.386870861053467 -2.3110387325286865 5.115782737731934 0.8882383108139038 -2.3110387325286865 5.115782737731934 -2.0816736221313477 2.3110387325286865 5.115782737731934 0.8882383108139038 -2.3110387325286865 5.115782737731934 0.8882383108139038</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-7-positions-array" count="68" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-7-normals">
+				<float_array id="id-mesh-7-normals-array" count="204"> 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 -0.7342128753662109 0.6789193153381348 0.0 -0.7342128753662109 0.6789193153381348 0.0 -0.7342128753662109 0.6789193153381348 0.0 -0.7342128753662109 0.6789193153381348 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-7-normals-array" count="68" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-7-texcoord-0">
+				<float_array id="id-mesh-7-texcoord-0-array" count="136"> 0.8515625 0.3671875 1.0 0.3671875 1.0 0.46875 0.8515625 0.46875 0.8515625 0.265625 1.0 0.265625 0.8515625 0.046875 1.0 0.046875 1.0 0.265625 0.8515625 0.265625 1.0 0.5625 0.8515625 0.5625 1.0 0.6640625 0.8515625 0.6640625 0.8515625 0.46875 0.8515625 0.5625 0.7734375 0.5625 0.7734375 0.46875 0.6484375 0.09375 0.4375 0.09375 0.4375 0.0 0.6484375 0.0 0.734375 0.5703125 0.734375 0.3671875 0.7734375 0.3671875 0.7734375 0.5703125 0.7734375 0.46875 0.7734375 0.4375 0.640625 0.5703125 0.640625 0.3671875 0.8515625 0.09375 0.6484375 0.09375 0.6484375 0.0 0.8515625 0.0 0.6484375 0.1171875 0.8515625 0.1171875 0.8515625 0.265625 0.6484375 0.265625 1.0 0.765625 0.8515625 0.765625 0.8515625 0.765625 0.7734375 0.765625 0.7734375 0.5625 0.8515625 0.5625 0.6484375 0.265625 0.8515625 0.265625 0.8515625 0.3671875 0.6484375 0.3671875 0.8515625 0.3671875 0.8515625 0.46875 1.0 0.46875 1.0 0.3671875 1.0 0.265625 0.8515625 0.265625 0.8515625 0.5625 1.0 0.5625 0.8515625 0.6640625 1.0 0.6640625 0.8515625 0.46875 0.7734375 0.46875 0.7734375 0.5625 0.8515625 0.5625 0.7734375 0.4375 0.7734375 0.46875 0.8515625 0.765625 1.0 0.765625 0.6484375 0.1953125 0.4375 0.1953125</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-7-texcoord-0-array" count="68" stride="2">
+					<param name="S" type="float"/>
+					<param name="T" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<vertices id="id-mesh-7-vertices">
+				<input semantic="POSITION" source="#id-mesh-7-positions"/>
+			</vertices>
+			<polygons count="23" material="id-trimat-8">
+				<input semantic="VERTEX" source="#id-mesh-7-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-7-normals" offset="0"/>
+				<input semantic="TEXCOORD" source="#id-mesh-7-texcoord-0" offset="0" set="0"/>
+				<p> 0 1 2 3 </p>
+				<p> 0 4 5 1 </p>
+				<p> 6 7 8 9 </p>
+				<p> 3 2 10 11 </p>
+				<p> 11 10 12 13 </p>
+				<p> 14 15 16 17 </p>
+				<p> 18 19 20 21 </p>
+				<p> 22 23 24 25 </p>
+				<p> 0 3 26 27 </p>
+				<p> 28 29 23 22 </p>
+				<p> 30 31 32 33 </p>
+				<p> 34 35 36 37 </p>
+				<p> 13 12 38 39 </p>
+				<p> 40 41 42 43 </p>
+				<p> 44 45 46 47 </p>
+				<p> 48 49 50 51 </p>
+				<p> 48 51 52 53 </p>
+				<p> 49 54 55 50 </p>
+				<p> 54 56 57 55 </p>
+				<p> 58 59 60 61 </p>
+				<p> 48 62 63 49 </p>
+				<p> 56 64 65 57 </p>
+				<p> 66 67 19 18 </p>
+			</polygons>
+		</mesh>
+	</geometry>
+	<geometry id="id-mesh-11" name="Plane">
+		<mesh>
+			<source id="id-mesh-11-positions">
+				<float_array id="id-mesh-11-positions-array" count="12"> -1.0 -1.0 0.0 1.0 -1.0 0.0 1.0 1.0 0.0 -1.0 1.0 0.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-11-positions-array" count="4" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-11-normals">
+				<float_array id="id-mesh-11-normals-array" count="12"> 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-11-normals-array" count="4" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-11-texcoord-0">
+				<float_array id="id-mesh-11-texcoord-0-array" count="8"> 0.0 0.0 1.0 0.0 1.0 1.0 0.0 1.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-11-texcoord-0-array" count="4" stride="2">
+					<param name="S" type="float"/>
+					<param name="T" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<vertices id="id-mesh-11-vertices">
+				<input semantic="POSITION" source="#id-mesh-11-positions"/>
+			</vertices>
+			<polygons count="1" material="id-trimat-12">
+				<input semantic="VERTEX" source="#id-mesh-11-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-11-normals" offset="0"/>
+				<input semantic="TEXCOORD" source="#id-mesh-11-texcoord-0" offset="0" set="0"/>
+				<p> 0 1 2 3 </p>
+			</polygons>
+		</mesh>
+	</geometry>
+</library_geometries>
+<library_visual_scenes>
+	<visual_scene id="id-scene-1" name="scene">
+		<node id="Cube.003" name="Cube.003" type="NODE">
+			<matrix sid="transform"> 0.8013937473297119 0.0 0.0 0.0 0.0 0.8013937473297119 0.0 0.0 0.0 0.0 0.8013937473297119 0.0 0.0 0.0 0.0 1.0  </matrix>
+			<instance_geometry url="#id-mesh-7">
+				<bind_material>
+					<technique_common>
+						<instance_material symbol="id-trimat-8" target="#id-material-6"/>
+					</technique_common>
+				</bind_material>
+			</instance_geometry>
+		</node>
+		<node id="Plane" name="Plane" type="NODE">
+			<matrix sid="transform"> 1.8399999141693115 0.0 0.0 0.0 0.0 3.9799997806549072 0.0 0.07999999821186066 0.0 0.0 1.0 -1.1131123304367065 0.0 0.0 0.0 1.0  </matrix>
+			<instance_geometry url="#id-mesh-11">
+				<bind_material>
+					<technique_common>
+						<instance_material symbol="id-trimat-12" target="#id-material-10"/>
+					</technique_common>
+				</bind_material>
+			</instance_geometry>
+		</node>
+	</visual_scene>
+</library_visual_scenes>
+<scene>
+	<instance_visual_scene url="#id-scene-1" />
+</scene>
+</COLLADA>
