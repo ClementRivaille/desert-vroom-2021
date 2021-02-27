@@ -15,9 +15,24 @@ _global_script_classes=[ {
 "path": "res://scripts/Car.gd"
 }, {
 "base": "Spatial",
+"class": "DesertObjects",
+"language": "GDScript",
+"path": "res://scripts/DesertObjects.gd"
+}, {
+"base": "Spatial",
+"class": "Main",
+"language": "GDScript",
+"path": "res://scripts/Main.gd"
+}, {
+"base": "Spatial",
 "class": "MouseCamera",
 "language": "GDScript",
 "path": "res://scripts/MouseCamera.gd"
+}, {
+"base": "GridMap",
+"class": "ProceduralDesert",
+"language": "GDScript",
+"path": "res://ProceduralDesert.gd"
 }, {
 "base": "Spatial",
 "class": "SpriteBody",
@@ -26,14 +41,17 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Car": "",
+"DesertObjects": "",
+"Main": "",
 "MouseCamera": "",
+"ProceduralDesert": "",
 "SpriteBody": ""
 }
 
 [application]
 
 config/name="Desert Vroom 2021"
-run/main_scene="res://scenes/TestDrive.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -74,6 +92,10 @@ click={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[physics]
+
+3d/default_gravity=12.0
 
 [rendering]
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scripts/DesertObjects.gd" type="Script" id=1]
+[ext_resource path="res://prefabs/desert/Bush3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/desert/Thumbleweed.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/desert/Grass.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/desert/Bush1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/desert/Bush2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/desert/Cactus2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/desert/Boulder.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/desert/Cactus1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefabs/desert/Patricia.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/desert/Tree3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefabs/desert/Tree.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefabs/desert/Tree2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefabs/desert/Rock2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefabs/desert/Rock3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://prefabs/desert/Rock.tscn" type="PackedScene" id=16]
+
+[node name="DesertObjects" type="Spatial"]
+script = ExtResource( 1 )
+common = [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ]
+rare = [ ExtResource( 8 ), ExtResource( 10 ) ]
