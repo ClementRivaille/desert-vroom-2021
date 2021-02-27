@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/sand.png" type="Texture" id=1]
+
+[sub_resource type="PlaneMesh" id=10]
+size = Vector2( 256, 256 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 1 )
+metallic_specular = 0.0
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 128, 0.05, 128 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="DesertTile" type="MeshInstance" parent="."]
+mesh = SubResource( 10 )
+material/0 = SubResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="DesertTile"]
+
+[node name="CollisionShape" type="CollisionShape" parent="DesertTile/StaticBody"]
+shape = SubResource( 9 )

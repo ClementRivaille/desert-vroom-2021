@@ -76,3 +76,4 @@ script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="Camera/Gimbal"]
 transform = Transform( -1, 1.71138e-07, -2.7728e-07, 0, 0.850967, 0.525219, 3.25841e-07, 0.525219, -0.850967, 0, 4.80614, -17.9888 )
+far = 320.0

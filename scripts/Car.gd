@@ -3,7 +3,7 @@ class_name Car
 
 onready var camera: Camera = $Camera
 
-const STEER_SPEED = 0.3
+const STEER_SPEED = 1
 const STEER_LIMIT = 0.4
 
 var steer_target = 0
