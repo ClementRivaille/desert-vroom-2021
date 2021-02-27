@@ -1,14 +1,16 @@
 extends VehicleBody
 class_name Car
 
-onready var camera: Camera = $Camera
+onready var camera: MouseCamera = $CameraTarget/Camera
+onready var target: Spatial = $CameraTarget
 
-const STEER_SPEED = 1
-const STEER_LIMIT = 0.4
+const STEER_SPEED = 2
+const STEER_LIMIT = 0.1
 
 var steer_target = 0
 
-export var engine_force_value = 40
+export(float) var engine_force_value := 30
+export(float) var air_resistance := 1.0
 
 func _ready():
   camera.set_as_toplevel(true)
@@ -34,4 +36,8 @@ func _physics_process(delta):
 
   steering = move_toward(steering, steer_target, STEER_SPEED * delta)
   
-  camera.global_transform.origin = global_transform.origin
+  add_central_force(-linear_velocity * air_resistance)
+  # print(linear_velocity.length())
+  
+  # Camera
+  camera.global_transform.origin = target.global_transform.origin
