@@ -16,7 +16,7 @@ func _ready():
   camera.set_as_toplevel(true)
 
 func _physics_process(delta):
-  var fwd_mps = transform.basis.xform_inv(linear_velocity).x
+  var fwd_mps = transform.basis.xform_inv(linear_velocity).y
 
   steer_target = Input.get_action_strength("steer_left") - Input.get_action_strength("steer_right")
   steer_target *= STEER_LIMIT

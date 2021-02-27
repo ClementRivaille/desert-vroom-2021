@@ -1,46 +1,82 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://prefabs/Desert.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://prefabs/Car.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/materials/2D_sprite_material.tres" type="Material" id=3]
+[ext_resource path="res://prefabs/desert/Cactus1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/environments/desert_env.tres" type="Environment" id=4]
-
-[sub_resource type="CapsuleShape" id=4]
-height = 2.0
-
-[sub_resource type="PlaneMesh" id=5]
-size = Vector2( 4, 4 )
+[ext_resource path="res://prefabs/desert/Bush1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/desert/Tree3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/desert/Cactus2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/desert/Tree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/desert/Boulder.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefabs/desert/Bush2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/desert/Bush3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefabs/desert/Grass.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefabs/desert/Rock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefabs/desert/Rock2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefabs/desert/Thumbleweed.tscn" type="PackedScene" id=15]
+[ext_resource path="res://prefabs/desert/Patricia.tscn" type="PackedScene" id=16]
+[ext_resource path="res://prefabs/desert/Rock3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://prefabs/desert/Tree2.tscn" type="PackedScene" id=18]
 
 [node name="TestDrive" type="Spatial"]
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6948, 0, 0 )
 mass = 0.91
 
 [node name="Objects" type="Spatial" parent="."]
 
-[node name="Cactus" type="StaticBody" parent="Objects"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.195, 0, -20.278 )
+[node name="Cactus" parent="Objects" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147.228, 0, -84.4797 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Objects/Cactus"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 2, 0 )
-shape = SubResource( 4 )
+[node name="SpriteBody" parent="Objects" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.2253, 0, 18.9724 )
 
-[node name="Back" type="MeshInstance" parent="Objects/Cactus"]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 2, 0 )
-mesh = SubResource( 5 )
-material/0 = ExtResource( 3 )
+[node name="Bush" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.589, 0, -116.664 )
 
-[node name="Front" type="MeshInstance" parent="Objects/Cactus"]
-transform = Transform( 1.62921e-07, 1, -3.25841e-07, 1, -1.62921e-07, 0, -5.30863e-14, -3.25841e-07, -1, 0, 2, 0 )
-mesh = SubResource( 5 )
-material/0 = ExtResource( 3 )
+[node name="Bush2" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -114.44, 0, 139.791 )
+
+[node name="Bush3" parent="Objects" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -262.153, 0, 38.785 )
+
+[node name="Boulder" parent="Objects" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0188, 0, -30.3421 )
+
+[node name="Tree" parent="Objects" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -229.937 )
+
+[node name="Tree2" parent="Objects" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 114.213, 0, -111.252 )
+
+[node name="Tree3" parent="Objects" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -81.6217, 0, 244.147 )
+
+[node name="Rock" parent="Objects" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 212.209, 0, -47.7208 )
+
+[node name="Rock2" parent="Objects" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.5066, 0, 16.2967 )
+
+[node name="Rock3" parent="Objects" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.39, 0, 95.0864 )
+
+[node name="Thumbleweed" parent="Objects" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.6527, 0, -79.156 )
+
+[node name="Grass" parent="Objects" instance=ExtResource( 12 )]
+
+[node name="Patricia" parent="Objects" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5391, 0, -144.032 )
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 256, 256, 256 )
 cell_center_y = false
 data = {
-"cells": PoolIntArray( 0, 0, 536870913, 1, 0, 1, 2, 0, 1, 3, 0, 1, 65533, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 1, 1, 1, 1, 1, 2, 1, 536870913, 3, 1, 1, 65533, 1, 1, 65534, 1, 1, 65535, 1, -1610612735, 0, 2, 1, 1, 2, 1, 2, 2, 1, 3, 2, 1, 65533, 2, 1, 65534, 2, 536870913, 65535, 2, 1, 0, 65533, 1, 1, 65533, 1, 2, 65533, 1, 3, 65533, 1, 65533, 65533, 1, 65534, 65533, 536870913, 65535, 65533, 1, 0, 65534, 1, 1, 65534, 536870913, 2, 65534, 1, 3, 65534, 1, 65533, 65534, 536870913, 65534, 65534, 1, 65535, 65534, 1, 0, 65535, 1, 1, 65535, 1, 2, 65535, 1, 3, 65535, 1, 65533, 65535, 536870913, 65534, 65535, 1, 65535, 65535, 1 )
+"cells": PoolIntArray( 0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 536870913, 65533, 0, 1, 65534, 0, 1, 65535, 0, -1073741823, 0, 1, 1, 1, 1, 536870913, 2, 1, 536870913, 3, 1, 536870913, 65533, 1, 536870913, 65534, 1, 1, 65535, 1, 1, 0, 2, 1, 1, 2, 536870913, 2, 2, 536870913, 3, 2, 1, 65533, 2, 1, 65534, 2, 1, 65535, 2, 1, 0, 65533, 1, 1, 65533, 536870913, 2, 65533, 536870913, 3, 65533, 536870913, 65533, 65533, 536870913, 65534, 65533, 536870913, 65535, 65533, 536870913, 0, 65534, 536870913, 1, 65534, 536870913, 2, 65534, 1, 3, 65534, 1, 65533, 65534, 536870913, 65534, 65534, 1073741825, 65535, 65534, 536870913, 0, 65535, -1073741823, 1, 65535, -2147483647, 2, 65535, -1073741823, 3, 65535, 536870913, 65533, 65535, 536870913, 65534, 65535, 536870913, 65535, 65535, 536870913 )
 }
 __meta__ = {
 "_editor_clip_": 0,
