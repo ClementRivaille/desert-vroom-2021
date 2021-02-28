@@ -44,8 +44,11 @@ func change_state(running: bool):
   tween.start()
 
 func update_pitch(speed: float):
-  var value := speed / max_speed
-  engine.pitch_scale = lerp(min_scale, 1.0, value)
+  if speed > 0:
+    var value := speed / max_speed
+    engine.pitch_scale = lerp(min_scale, 1.0, value)
+  elif engine.pitch_scale > min_scale:
+    engine.pitch_scale = max(min_scale, engine.pitch_scale * 0.99)
   
 func play_crash(loud: bool):
   if crash.playing:

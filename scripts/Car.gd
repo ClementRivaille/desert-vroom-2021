@@ -50,7 +50,7 @@ func _physics_process(delta):
   # Camera
   camera.global_transform.origin = target.global_transform.origin
   
-  var speed : float = linear_velocity.length() if on_ground else 0
+  var speed : float = linear_velocity.length() if on_ground else -1
   sounds.update_pitch(speed)
   
 func update_on_ground():
