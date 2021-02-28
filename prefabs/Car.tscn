@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/models/car_model.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Car.gd" type="Script" id=2]
 [ext_resource path="res://scripts/MouseCamera.gd" type="Script" id=3]
+[ext_resource path="res://assets/sounds/SFX_Car_Engine_Idle_loop.wav" type="AudioStream" id=4]
+[ext_resource path="res://scripts/CarSounds.gd" type="Script" id=5]
+[ext_resource path="res://assets/sounds/SFX_Car_Engine_Full_loop.wav" type="AudioStream" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.2
@@ -115,3 +118,19 @@ size = 13.0
 far = 320.0
 
 [node name="Tween" type="Tween" parent="CameraTarget/Camera"]
+
+[node name="Sounds" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="Idle" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 4 )
+bus = "Idle"
+
+[node name="Engine" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
+bus = "Motor"
+
+[node name="Crash" type="AudioStreamPlayer" parent="Sounds"]
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="Sounds"]

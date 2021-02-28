@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Car_Engine_Idle_loop.wav-73ab2ad19eb9aac8b83d0ea0d5cee759.sample"
+
+[deps]
+
+source_file="res://assets/sounds/SFX_Car_Engine_Idle_loop.wav"
+dest_files=[ "res://.import/SFX_Car_Engine_Idle_loop.wav-73ab2ad19eb9aac8b83d0ea0d5cee759.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
