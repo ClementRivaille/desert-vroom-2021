@@ -45,7 +45,7 @@ func _physics_process(delta):
   steering = move_toward(steering, steer_target, STEER_SPEED * delta)
   
   add_central_force(-linear_velocity * air_resistance)
-  print(linear_velocity.length())
+  # print(linear_velocity.length())
   
   # Camera
   camera.global_transform.origin = target.global_transform.origin
@@ -54,12 +54,17 @@ func _physics_process(delta):
   sounds.update_pitch(speed)
   
 func update_on_ground():
+  var in_air := !on_ground
+  
   on_ground = false
   for wheel_path in wheels:
     var wheel: VehicleWheel = get_node(wheel_path)
     on_ground = wheel.is_in_contact()
     if on_ground:
       break
+      
+  if in_air && on_ground:
+    sounds.play_crash(false)
   
 func _input(event):
   if (!air_control_lock &&
@@ -84,3 +89,14 @@ func reverse_gravity():
   
 func dezoom():
   camera.dezoom()
+
+
+func _integrate_forces(state : PhysicsDirectBodyState)->void:
+  var collision_force := Vector3.ZERO
+  for i in range(state.get_contact_count()):
+    collision_force += state.get_contact_impulse(i) * state.get_contact_local_normal(i)
+  
+  var force := collision_force.length()
+  if force > 250:
+    var loud: bool = false if force < 700 else true
+    sounds.play_crash(loud)
