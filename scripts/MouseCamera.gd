@@ -5,6 +5,9 @@ var mouse_sensitivity := 0.003
 
 onready var gimbal: Spatial = $Gimbal
 onready var camera: Camera = $Gimbal/Camera
+onready var tween: Tween = $Tween
+
+export(float) var dezoom_length := 90.0
 
 var x_inverted := false
 
@@ -30,3 +33,13 @@ func _input(event):
 
 func get_lateral_direction() -> Vector3:
   return camera.global_transform.basis.x
+
+func dezoom():
+  camera.projection = Camera.PROJECTION_ORTHOGONAL
+  camera.far = 3000
+  camera.transform.origin.z = -1500
+  
+  tween.interpolate_property(camera, "size",
+    camera.size, 5000, dezoom_length,
+    Tween.TRANS_SINE, Tween.EASE_IN)
+  tween.start()

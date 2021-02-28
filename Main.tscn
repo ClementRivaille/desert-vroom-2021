@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://prefabs/Desert.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://ProceduralDesert.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/AdaptiveEnvironment.gd" type="Script" id=7]
 [ext_resource path="res://assets/environments/space_env.tres" type="Environment" id=8]
 [ext_resource path="res://assets/environments/reversed_env.tres" type="Environment" id=9]
+[ext_resource path="res://assets/environments/end_environment.tres" type="Environment" id=10]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 60, 10, 60 )
@@ -17,13 +18,14 @@ extents = Vector3( 60, 10, 60 )
 script = ExtResource( 5 )
 space_environment = ExtResource( 8 )
 glitch_environment = ExtResource( 9 )
+end_environment = ExtResource( 10 )
 
 [node name="DesertMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 256, 256, 256 )
 cell_center_y = false
 data = {
-"cells": PoolIntArray( 0, 0, 1073741826 )
+"cells": PoolIntArray( 0, 0, 2 )
 }
 script = ExtResource( 2 )
 __meta__ = {
@@ -44,7 +46,6 @@ script = ExtResource( 7 )
 
 [node name="Car" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 0, 10 )
-gravity_scale = 1.0
 
 [node name="GenerationTimer" type="Timer" parent="."]
 wait_time = 0.5

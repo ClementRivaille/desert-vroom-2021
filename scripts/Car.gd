@@ -68,3 +68,6 @@ func reverse_gravity():
   gravity_scale = -1
   air_control_lock = true
   camera.x_inverted = true
+  
+func dezoom():
+  camera.dezoom()

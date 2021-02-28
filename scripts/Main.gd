@@ -9,6 +9,7 @@ onready var environment: AdaptiveEnvironment = $WorldEnvironment
 
 export(Environment) var space_environment: Environment
 export(Environment) var glitch_environment: Environment
+export(Environment) var end_environment: Environment
 
 var space_scene: PackedScene = preload("res://scenes/Space.tscn")
 var space_loaded := false
@@ -66,3 +67,7 @@ func on_exit_glitch():
     add_child(end)
     end.rotate_z(PI)
     end.global_transform.origin = player.global_transform.origin
+    
+    environment.transition_to(end_environment, true)
+    
+    player.dezoom()
