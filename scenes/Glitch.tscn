@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://prefabs/Glitch.meshlib" type="MeshLibrary" id=1]
+
+[node name="Glitch" type="Spatial"]
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -128, -32 )
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 64, 64, 64 )
+cell_center_y = false
+data = {
+"cells": PoolIntArray( 0, 0, 0, 2, 0, 1, 65534, 0, 3, -262143, 1, 1048591, -196609, 1, 536870930, -131072, 1, 536870923, -131070, 1, -1610612719, -65538, 1, 536870925, 0, 2, -1610612726, 2, 2, 536870919, 65534, 2, -1610612730, 0, 65534, -1610612731, 2, 65534, -1610612726, 65534, 65534, -1610612734, -262143, 65535, 1310724, -196609, 65535, -1610612720, -131072, 65535, 536870926, -131070, 65535, -1610612727, -65538, 65535, 536870924 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, -4, 0 )
+}

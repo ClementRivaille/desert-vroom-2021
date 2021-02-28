@@ -8,9 +8,13 @@ onready var sky_exit: Area = $SkyExit
 onready var environment: AdaptiveEnvironment = $WorldEnvironment
 
 export(Environment) var space_environment: Environment
+export(Environment) var glitch_environment: Environment
 
 var space_scene: PackedScene = preload("res://scenes/Space.tscn")
 var space_loaded := false
+
+var glitch_scene: PackedScene = preload("res://scenes/Glitch.tscn")
+var glitch_loaded := false
 
 func _ready():
   randomize()
@@ -38,5 +42,16 @@ func on_exit_sky(_body: PhysicsBody):
     space.connect("exit", self, "on_exit_space")
     
 func on_exit_space():
-  print("WE'RE ON ANOTHER PLANET!")
+  if !glitch_loaded:
+    glitch_loaded = true
+    
+    player.reverse_gravity()
+    environment.transition_to(glitch_environment)
+    yield(environment, "transition_done")
+    
+    var glitch: Spatial = glitch_scene.instance()
+    add_child(glitch)
+    glitch.rotate_z(PI)
+    glitch.global_transform.origin = player.global_transform.origin
+    
 

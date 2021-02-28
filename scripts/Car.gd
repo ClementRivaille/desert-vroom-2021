@@ -14,6 +14,7 @@ export(float) var air_resistance := 1.0
 export(float) var air_boost := 400.0;
 
 export(Array, NodePath) var wheels := []
+var air_control_lock := false
 
 func _physics_process(delta):
   var fwd_mps = transform.basis.xform_inv(linear_velocity).y
@@ -43,8 +44,8 @@ func _physics_process(delta):
   camera.global_transform.origin = target.global_transform.origin
   
 func _input(event):
-  var test := camera.get_lateral_direction()
-  if event.is_action_pressed("steer_left") || event.is_action_pressed("steer_right"):
+  if (!air_control_lock &&
+    (event.is_action_pressed("steer_left") || event.is_action_pressed("steer_right"))):
     var on_ground := false
     for wheel_path in wheels:
       var wheel: VehicleWheel = get_node(wheel_path)
@@ -64,4 +65,5 @@ func deactivate_gravity():
   gravity_scale = -0.06
   
 func reverse_gravity():
-  gravity_scale = -10
+  gravity_scale = -1
+  air_control_lock = true

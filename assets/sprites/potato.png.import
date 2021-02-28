@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/parasite.png-8d873722c1b6bd085ea715443aca8740.s3tc.stex"
-path.etc2="res://.import/parasite.png-8d873722c1b6bd085ea715443aca8740.etc2.stex"
+path.s3tc="res://.import/potato.png-b4d216cacbf59a86fe892049e88dd031.s3tc.stex"
+path.etc2="res://.import/potato.png-b4d216cacbf59a86fe892049e88dd031.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/parasite.png"
-dest_files=[ "res://.import/parasite.png-8d873722c1b6bd085ea715443aca8740.s3tc.stex", "res://.import/parasite.png-8d873722c1b6bd085ea715443aca8740.etc2.stex" ]
+source_file="res://assets/sprites/potato.png"
+dest_files=[ "res://.import/potato.png-b4d216cacbf59a86fe892049e88dd031.s3tc.stex", "res://.import/potato.png-b4d216cacbf59a86fe892049e88dd031.etc2.stex" ]
 
 [params]
 
