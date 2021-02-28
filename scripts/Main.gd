@@ -6,6 +6,8 @@ onready var desert_map: ProceduralDesert = $DesertMap
 onready var generation_timer: Timer = $GenerationTimer
 onready var sky_exit: Area = $SkyExit
 onready var environment: AdaptiveEnvironment = $WorldEnvironment
+onready var ui: UI = $UI
+onready var events_timer: Timer = $EventsTimer
 
 export(Environment) var space_environment: Environment
 export(Environment) var glitch_environment: Environment
@@ -71,3 +73,13 @@ func on_exit_glitch():
     environment.transition_to(end_environment, true)
     
     player.dezoom()
+    launch_credits()
+    
+func launch_credits():
+  events_timer.wait_time = 40.0
+  events_timer.start()
+  yield(events_timer, "timeout")
+  
+  ui.show_credits()
+
+

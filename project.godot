@@ -63,6 +63,11 @@ _global_script_classes=[ {
 "class": "SpriteBody",
 "language": "GDScript",
 "path": "res://scripts/SpriteBody.gd"
+}, {
+"base": "Control",
+"class": "UI",
+"language": "GDScript",
+"path": "res://scripts/UI.gd"
 } ]
 _global_script_class_icons={
 "AdaptiveEnvironment": "",
@@ -75,7 +80,8 @@ _global_script_class_icons={
 "ProceduralDesert": "",
 "RoadTile": "",
 "Space": "",
-"SpriteBody": ""
+"SpriteBody": "",
+"UI": ""
 }
 
 [application]
