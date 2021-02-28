@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://scripts/DesertObjects.gd"
 }, {
 "base": "Spatial",
+"class": "FloatingSprite",
+"language": "GDScript",
+"path": "res://scripts/FloatingSprite.gd"
+}, {
+"base": "Spatial",
 "class": "Main",
 "language": "GDScript",
 "path": "res://scripts/Main.gd"
@@ -47,6 +52,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Car": "",
 "DesertObjects": "",
+"FloatingSprite": "",
 "Main": "",
 "MouseCamera": "",
 "ProceduralDesert": "",

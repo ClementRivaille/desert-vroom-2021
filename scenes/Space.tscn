@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/environments/space_env.tres" type="Environment" id=1]
+[ext_resource path="res://prefabs/space/Saturn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/space/Ovni.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/space/Star2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/space/Star1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/space/Spaceship.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/space/Star3.tscn" type="PackedScene" id=8]
+
+[node name="Space" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
+
+[node name="Star1" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.752, 65.063, -58.8313 )
+
+[node name="Star7" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -296.427, 315, 131.966 )
+
+[node name="Star8" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 146.467, 196.567, -125.823 )
+
+[node name="Star4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 109.887, 101.839, 54.0552 )
+
+[node name="Star9" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -151.361, 226.943, -64.8583 )
+
+[node name="Star10" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.01, 230.13, 250.329 )
+
+[node name="Star2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -122.141, 18.8177, 71.3059 )
+
+[node name="Star11" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 232.398, 221.549, 71.3059 )
+
+[node name="Star12" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.704, 213.792, -56.5222 )
+
+[node name="Star5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4549, 20.2499, -115.223 )
+
+[node name="Star3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 106.521, 48.7204, -77.9964 )
+
+[node name="Star13" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.9761, 186.086, 66.8449 )
+
+[node name="Star14" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.9761, 208.89, -166.438 )
+
+[node name="Star6" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.4099, 51.1189, -96.3111 )
+
+[node name="Star15" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 239.767, 169.109, -240.8 )
+
+[node name="Spaceship" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 97.2143, 180.99, -102.849 )
+
+[node name="Saturn" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65.4892, 172.357, 147.292 )
+
+[node name="Ovni" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.9966, 88.7331, -33.4402 )

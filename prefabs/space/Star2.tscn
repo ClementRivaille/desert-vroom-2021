@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/SpriteBody.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/star_2.png" type="Texture" id=3]
+[ext_resource path="res://scripts/FloatingSprite.gd" type="Script" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_billboard_mode = 2
+params_billboard_keep_scale = true
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 10, 10 )
+
+[node name="Star2" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="SpriteBody" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="Back" type="MeshInstance" parent="SpriteBody"]
+transform = Transform( -1.62921e-07, -1, 0, 0.999667, -1.62867e-07, -0.0258106, 0.0258106, -4.20508e-09, 0.999667, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Front" type="MeshInstance" parent="SpriteBody/Back"]
+transform = Transform( 1, -3.25842e-07, 5.30863e-14, -3.25842e-07, -1, 3.25841e-07, -5.30863e-14, -3.25841e-07, -1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
