@@ -118,7 +118,7 @@ script = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 0.938968, -0.344004, 0, 0.344004, 0.938968, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="CameraTarget/Camera/Gimbal"]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, -14 )
+transform = Transform( -1, -2.49609e-07, -2.09447e-07, 0, 0.642788, -0.766044, 3.25841e-07, -0.766044, -0.642788, 0, 0, -14 )
 size = 13.0
 far = 320.0
 

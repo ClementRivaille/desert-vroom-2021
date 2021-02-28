@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/LeagueGothic-Regular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/credits_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/Oswald-Stencil.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 extra_spacing_char = 1
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+extra_spacing_bottom = -23
+font_data = ExtResource( 4 )
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
@@ -92,6 +98,20 @@ margin_right = 604.0
 margin_bottom = 348.0
 custom_fonts/font = ExtResource( 2 )
 text = "THE END"
+
+[node name="Title" type="Label" parent="."]
+anchor_top = 0.257
+anchor_right = 1.0
+anchor_bottom = 0.332
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Desert Vroom
+2021"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

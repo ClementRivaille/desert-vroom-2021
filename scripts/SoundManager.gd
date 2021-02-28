@@ -20,3 +20,8 @@ func play_credits_music():
   tween.start()
   credits_music.play()
   
+func activate_sfx():
+  tween.interpolate_property(sfx_amplify, "volume_db",
+    -30, 0, 2,
+    Tween.TRANS_SINE, Tween.EASE_OUT)
+  tween.start()

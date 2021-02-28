@@ -2,6 +2,7 @@
 
 [sub_resource type="AudioEffectAmplify" id=1]
 resource_name = "Amplify"
+volume_db = -50.0
 
 [resource]
 bus/1/name = "SFX"

@@ -5,7 +5,7 @@ signal transition_done
 
 onready var tween: Tween = $Tween
 
-var TRANSITION_DURATION := 1.2
+var TRANSITION_DURATION := 0.9
 var LONG_TRANSITION := 30.0
 
 func transition_to(env: Environment, long: bool = false):

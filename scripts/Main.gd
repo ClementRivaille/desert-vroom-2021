@@ -24,6 +24,15 @@ var end_loaded := false
 
 onready var sound_manager: SoundManager = $SoundManager
 
+var title_displayed := true
+
+func _input(event):
+  if event.is_action_pressed("ui_accept") && title_displayed:
+    title_displayed = false
+    ui.hide_title()
+    player.activate()
+    sound_manager.activate_sfx()
+
 func _ready():
   randomize()
 

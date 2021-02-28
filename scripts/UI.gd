@@ -5,9 +5,16 @@ onready var timer: Timer = $Timer
 onready var tween: Tween = $Tween
 
 onready var credits: Control = $Credits
+onready var title: Control = $Title
 
 export(float) var credit_slide_duration := 6.0
 export(float) var credit_slide_interval = 1.0
+
+func hide_title():
+  tween.interpolate_property(title, "modulate",
+    Color(1.0, 1.0, 1.0, 1.0), Color(1.0, 1.0, 1.0, 0.0), 1,
+    Tween.TRANS_SINE, Tween.EASE_IN)
+  tween.start()
 
 func show_credits():
   credits.visible = true

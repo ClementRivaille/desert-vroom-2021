@@ -21,31 +21,37 @@ var accelerating := false
 
 onready var sounds: CarSounds = $Sounds
 
-func _ready():
+var active := false
+
+func activate():
   sounds.activate()
+  camera.activate()
+  yield(camera, "camera_ready")
+  active = true
 
 func _physics_process(delta):
   update_on_ground()
   var fwd_mps = transform.basis.xform_inv(linear_velocity).y
 
-  steer_target = Input.get_action_strength("steer_left") - Input.get_action_strength("steer_right")
-  steer_target *= STEER_LIMIT
-
-  if Input.is_action_pressed("accelerate") || Input.is_action_pressed("brake"):
-    engine_force = engine_force_value if Input.is_action_pressed("accelerate") else -engine_force_value
-    if !accelerating:
-      sounds.change_state(true)
-      accelerating = true
-  else:
-    engine_force = 0
-    if accelerating:
-      sounds.change_state(false)
-      accelerating = false
-
-  steering = move_toward(steering, steer_target, STEER_SPEED * delta)
+  if active:
+    steer_target = Input.get_action_strength("steer_left") - Input.get_action_strength("steer_right")
+    steer_target *= STEER_LIMIT
   
-  add_central_force(-linear_velocity * air_resistance)
-  # print(linear_velocity.length())
+    if Input.is_action_pressed("accelerate") || Input.is_action_pressed("brake"):
+      engine_force = engine_force_value if Input.is_action_pressed("accelerate") else -engine_force_value
+      if !accelerating:
+        sounds.change_state(true)
+        accelerating = true
+    else:
+      engine_force = 0
+      if accelerating:
+        sounds.change_state(false)
+        accelerating = false
+  
+    steering = move_toward(steering, steer_target, STEER_SPEED * delta)
+    
+    add_central_force(-linear_velocity * air_resistance)
+    # print(linear_velocity.length())
   
   # Camera
   camera.global_transform.origin = target.global_transform.origin
@@ -67,6 +73,9 @@ func update_on_ground():
     sounds.play_crash(false)
   
 func _input(event):
+  if !active:
+    return
+
   if (!air_control_lock &&
     (event.is_action_pressed("steer_left") || event.is_action_pressed("steer_right"))):
     
@@ -92,6 +101,9 @@ func dezoom():
 
 
 func _integrate_forces(state : PhysicsDirectBodyState)->void:
+  if !active:
+    return
+
   var collision_force := Vector3.ZERO
   for i in range(state.get_contact_count()):
     collision_force += state.get_contact_impulse(i) * state.get_contact_local_normal(i)
