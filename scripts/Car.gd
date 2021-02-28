@@ -10,9 +10,9 @@ const STEER_LIMIT = 0.1
 var steer_target := 0.0
 
 export(float) var engine_force_value := 30
-export(float) var air_resistance := 1.0
+export(float) var air_resistance := 15.0
 export(float) var air_boost := 1200.0;
-export(float) var v_air_boost := 0.3
+export(float) var v_air_boost := 0
 
 export(Array, NodePath) var wheels := []
 var air_control_lock := false
@@ -52,6 +52,7 @@ func _physics_process(delta):
     steering = move_toward(steering, steer_target, STEER_SPEED * delta)
     
     add_central_force(-linear_velocity * air_resistance)
+    add_torque(-angular_velocity * air_resistance)
     # print(linear_velocity.length())
     
     # Air control
@@ -86,18 +87,24 @@ func air_control(left: bool = false):
     var impulse := direction.normalized() *  air_boost
     add_central_force(impulse)
     
-    if angular_velocity.length() < 15:
-      var torque = Vector3(0, -180, 0)
+    if angular_velocity.length() < 20:
+      var torque = Vector3(0, -300, 0)
       torque.y = torque.y if !left else -torque.y
       add_torque(torque)
   
 func deactivate_gravity():
-  gravity_scale = -0.06
+  gravity_scale = 0
+  air_resistance = 7
+  v_air_boost = 0.4
+  air_boost = 200
+  linear_velocity = Vector3(0, 4, 0)
+  angular_velocity = angular_velocity * 0.2
   
 func reverse_gravity():
   gravity_scale = -1
   air_control_lock = true
   camera.x_inverted = true
+  air_resistance = 15
   
 func dezoom():
   camera.dezoom()
@@ -118,6 +125,6 @@ func _integrate_forces(state : PhysicsDirectBodyState)->void:
 
 func boost():
   engine_force_value += 150
-  air_boost += 600
-  v_air_boost = 0.5
+  air_boost += 500
+  v_air_boost = 0.6
   

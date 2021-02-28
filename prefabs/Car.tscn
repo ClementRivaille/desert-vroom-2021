@@ -25,7 +25,6 @@ physics_material_override = SubResource( 1 )
 contacts_reported = 3
 script = ExtResource( 2 )
 engine_force_value = 300.0
-air_resistance = 15.0
 wheels = [ NodePath("VehicleWheel"), NodePath("VehicleWheel3"), NodePath("VehicleWheel2"), NodePath("VehicleWheel4"), NodePath("VehicleWheel8"), NodePath("VehicleWheel7"), NodePath("VehicleWheel6"), NodePath("VehicleWheel5") ]
 
 [node name="car" parent="." instance=ExtResource( 1 )]
