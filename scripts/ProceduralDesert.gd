@@ -45,3 +45,8 @@ func generate_world():
         if x == 0:
           tile_objects.road_tile = true
         objects.add_child(tile_objects)
+
+func is_off_road(position: Vector3) -> bool:
+  var coordinates := world_to_map(position)
+  return coordinates.x != 0
+  

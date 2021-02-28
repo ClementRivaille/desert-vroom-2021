@@ -7,11 +7,12 @@ onready var target: Spatial = $CameraTarget
 const STEER_SPEED = 1
 const STEER_LIMIT = 0.1
 
-var steer_target = 0
+var steer_target := 0.0
 
 export(float) var engine_force_value := 30
 export(float) var air_resistance := 1.0
-export(float) var air_boost := 400.0;
+export(float) var air_boost := 1200.0;
+export(float) var v_air_boost := 0.3
 
 export(Array, NodePath) var wheels := []
 var air_control_lock := false
@@ -52,6 +53,10 @@ func _physics_process(delta):
     
     add_central_force(-linear_velocity * air_resistance)
     # print(linear_velocity.length())
+    
+    # Air control
+    if !on_ground && (Input.is_action_pressed("steer_left") || Input.is_action_pressed("steer_right")):
+      air_control(Input.is_action_pressed("steer_left"))
   
   # Camera
   camera.global_transform.origin = target.global_transform.origin
@@ -72,21 +77,19 @@ func update_on_ground():
   if in_air && on_ground:
     sounds.play_crash(false)
   
-func _input(event):
-  if !active:
-    return
-
-  if (!air_control_lock &&
-    (event.is_action_pressed("steer_left") || event.is_action_pressed("steer_right"))):
+func air_control(left: bool = false):
+  if !air_control_lock:
+    var direction := camera.get_lateral_direction()
+    if left:
+      direction = - direction
+    direction.y = v_air_boost;
+    var impulse := direction.normalized() *  air_boost
+    add_central_force(impulse)
     
-    # Air control
-    if !on_ground:
-      var direction := camera.get_lateral_direction()
-      if event.is_action_pressed("steer_left"):
-        direction = - direction
-      direction.y = 0.3;
-      var impulse := direction.normalized() *  air_boost
-      apply_central_impulse(impulse)
+    if angular_velocity.length() < 15:
+      var torque = Vector3(0, -180, 0)
+      torque.y = torque.y if !left else -torque.y
+      add_torque(torque)
   
 func deactivate_gravity():
   gravity_scale = -0.06
@@ -112,3 +115,9 @@ func _integrate_forces(state : PhysicsDirectBodyState)->void:
   if force > 250:
     var loud: bool = false if force < 700 else true
     sounds.play_crash(loud)
+
+func boost():
+  engine_force_value += 150
+  air_boost += 600
+  v_air_boost = 0.5
+  

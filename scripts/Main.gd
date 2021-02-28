@@ -25,6 +25,7 @@ var end_loaded := false
 onready var sound_manager: SoundManager = $SoundManager
 
 var title_displayed := true
+var off_road := false
 
 func _input(event):
   if event.is_action_pressed("ui_accept") && title_displayed:
@@ -40,6 +41,10 @@ func update_player_position():
   desert_map.update_player_position(player.global_transform.origin)
   sky_exit.global_transform.origin.x = player.global_transform.origin.x
   sky_exit.global_transform.origin.z = player.global_transform.origin.z
+  if !off_road:
+    off_road = desert_map.is_off_road(player.global_transform.origin)
+    if off_road:
+      player.boost()
 
 
 func on_exit_sky(_body: PhysicsBody):

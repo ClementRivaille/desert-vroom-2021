@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "GridMap",
 "class": "ProceduralDesert",
 "language": "GDScript",
-"path": "res://ProceduralDesert.gd"
+"path": "res://scripts/ProceduralDesert.gd"
 }, {
 "base": "Spatial",
 "class": "RoadTile",
