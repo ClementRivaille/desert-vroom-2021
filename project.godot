@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "WorldEnvironment",
+"class": "AdaptiveEnvironment",
+"language": "GDScript",
+"path": "res://scripts/AdaptiveEnvironment.gd"
+}, {
 "base": "VehicleBody",
 "class": "Car",
 "language": "GDScript",
@@ -45,11 +50,17 @@ _global_script_classes=[ {
 "path": "res://scripts/RoadTile.gd"
 }, {
 "base": "Spatial",
+"class": "Space",
+"language": "GDScript",
+"path": "res://scripts/Space.gd"
+}, {
+"base": "Spatial",
 "class": "SpriteBody",
 "language": "GDScript",
 "path": "res://scripts/SpriteBody.gd"
 } ]
 _global_script_class_icons={
+"AdaptiveEnvironment": "",
 "Car": "",
 "DesertObjects": "",
 "FloatingSprite": "",
@@ -57,6 +68,7 @@ _global_script_class_icons={
 "MouseCamera": "",
 "ProceduralDesert": "",
 "RoadTile": "",
+"Space": "",
 "SpriteBody": ""
 }
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://prefabs/Desert.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://ProceduralDesert.gd" type="Script" id=2]
@@ -6,19 +6,22 @@
 [ext_resource path="res://prefabs/Car.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=5]
 [ext_resource path="res://prefabs/desert/RoadTile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/AdaptiveEnvironment.gd" type="Script" id=7]
+[ext_resource path="res://assets/environments/space_env.tres" type="Environment" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 60, 10, 60 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 5 )
+space_environment = ExtResource( 8 )
 
 [node name="DesertMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 256, 256, 256 )
 cell_center_y = false
 data = {
-"cells": PoolIntArray( 0, 0, 1610612738 )
+"cells": PoolIntArray( 0, 0, 536870914 )
 }
 script = ExtResource( 2 )
 __meta__ = {
@@ -33,6 +36,9 @@ empty = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
+script = ExtResource( 7 )
+
+[node name="Tween" type="Tween" parent="WorldEnvironment"]
 
 [node name="Car" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 0, 10 )
@@ -43,11 +49,12 @@ wait_time = 0.5
 autostart = true
 
 [node name="SkyExit" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 300, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 340, 0 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="SkyExit"]
 shape = SubResource( 1 )
+[connection signal="tween_all_completed" from="WorldEnvironment/Tween" to="WorldEnvironment" method="on_transition_complete"]
 [connection signal="timeout" from="GenerationTimer" to="." method="update_player_position"]
 [connection signal="body_entered" from="SkyExit" to="." method="on_exit_sky"]

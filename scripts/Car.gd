@@ -60,4 +60,8 @@ func _input(event):
       var impulse := direction.normalized() *  air_boost
       apply_central_impulse(impulse)
   
+func deactivate_gravity():
+  gravity_scale = -0.06
   
+func reverse_gravity():
+  gravity_scale = -10

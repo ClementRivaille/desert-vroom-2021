@@ -19,6 +19,7 @@ size = Vector2( 100, 60 )
 
 [node name="Saturn" type="Spatial"]
 script = ExtResource( 2 )
+max_speed = 0.0
 
 [node name="SpriteBody" type="Spatial" parent="."]
 script = ExtResource( 1 )
