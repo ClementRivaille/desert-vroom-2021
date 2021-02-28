@@ -33,6 +33,11 @@ func _input(event):
     ui.hide_title()
     player.activate()
     sound_manager.activate_sfx()
+    
+  if event.is_action_pressed("fullscreen"):
+    OS.window_fullscreen = !OS.window_fullscreen
+  if event.is_action_pressed("ui_cancel"):
+    OS.window_fullscreen = false
 
 func _ready():
   randomize()

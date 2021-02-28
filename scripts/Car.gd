@@ -12,7 +12,7 @@ var steer_target := 0.0
 export(float) var engine_force_value := 30
 export(float) var air_resistance := 15.0
 export(float) var air_boost := 1200.0;
-export(float) var v_air_boost := 0
+export(float) var v_air_boost := 0.0
 
 export(Array, NodePath) var wheels := []
 var air_control_lock := false

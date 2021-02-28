@@ -3,6 +3,6 @@
 [ext_resource path="res://assets/fonts/LeagueGothic-Regular.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 80
+size = 120
 extra_spacing_char = 1
 font_data = ExtResource( 1 )

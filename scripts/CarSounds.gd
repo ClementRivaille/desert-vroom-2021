@@ -11,7 +11,7 @@ export(Array, AudioStream) var light_crashes := []
 export(Array, AudioStream) var loud_crashes := []
 
 var min_scale := 0.2
-var max_speed := 80.0
+var max_speed := 120.0
 
 var fade_in: float = 0.3
 var fade_out: float = 1.0

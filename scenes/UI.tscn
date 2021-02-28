@@ -6,12 +6,12 @@
 [ext_resource path="res://assets/fonts/Oswald-Stencil.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 60
 extra_spacing_char = 1
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
+size = 120
 extra_spacing_bottom = -23
 font_data = ExtResource( 4 )
 
@@ -24,7 +24,6 @@ __meta__ = {
 }
 
 [node name="Credits" type="CenterContainer" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -33,69 +32,69 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="Credits"]
 visible = false
-margin_left = 283.0
-margin_top = 251.0
-margin_right = 741.0
-margin_bottom = 348.0
+margin_left = 430.0
+margin_top = 377.0
+margin_right = 1106.0
+margin_bottom = 522.0
 custom_fonts/font = ExtResource( 2 )
 text = "DESERT VROOM 2021"
 
 [node name="Itooh" type="VSplitContainer" parent="Credits"]
 visible = false
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+margin_left = 768.0
+margin_top = 450.0
+margin_right = 768.0
+margin_bottom = 450.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Credits/Itooh"]
-margin_right = 156.0
-margin_bottom = 61.0
+margin_right = 185.0
+margin_bottom = 73.0
 custom_fonts/font = SubResource( 1 )
 text = "Created by"
 align = 1
 
 [node name="Label2" type="Label" parent="Credits/Itooh"]
-margin_top = 73.0
-margin_right = 156.0
-margin_bottom = 170.0
+margin_top = 85.0
+margin_right = 185.0
+margin_bottom = 230.0
 custom_fonts/font = ExtResource( 2 )
 text = "Itooh"
 align = 1
 
 [node name="Music" type="VSplitContainer" parent="Credits"]
 visible = false
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+margin_left = 768.0
+margin_top = 450.0
+margin_right = 768.0
+margin_bottom = 450.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Credits/Music"]
-margin_right = 274.0
-margin_bottom = 61.0
+margin_right = 322.0
+margin_bottom = 73.0
 custom_fonts/font = SubResource( 1 )
 text = "Sounds & Music by"
 align = 1
 
 [node name="Label2" type="Label" parent="Credits/Music"]
-margin_top = 73.0
-margin_right = 274.0
-margin_bottom = 170.0
+margin_top = 85.0
+margin_right = 322.0
+margin_bottom = 230.0
 custom_fonts/font = ExtResource( 2 )
 text = "Koji"
 align = 1
 
 [node name="End" type="Label" parent="Credits"]
 visible = false
-margin_left = 419.0
-margin_top = 251.0
-margin_right = 604.0
-margin_bottom = 348.0
+margin_left = 631.0
+margin_top = 377.0
+margin_right = 905.0
+margin_bottom = 522.0
 custom_fonts/font = ExtResource( 2 )
 text = "THE END"
 
