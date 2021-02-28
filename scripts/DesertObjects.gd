@@ -45,7 +45,7 @@ func distribute_objects():
     place_object(prefab)
         
   # add a rare object
-  if randf() < 0.3:
+  if randf() < 0.2:
     var rare_prefab = rare[randi()%rare.size()]
     place_object(rare_prefab)
 

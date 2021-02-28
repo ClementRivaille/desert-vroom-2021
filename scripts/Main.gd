@@ -16,6 +16,9 @@ var space_loaded := false
 var glitch_scene: PackedScene = preload("res://scenes/Glitch.tscn")
 var glitch_loaded := false
 
+var end_scene: PackedScene = preload("res://scenes/End.tscn")
+var end_loaded := false
+
 func _ready():
   randomize()
 
@@ -49,9 +52,17 @@ func on_exit_space():
     environment.transition_to(glitch_environment)
     yield(environment, "transition_done")
     
-    var glitch: Spatial = glitch_scene.instance()
+    var glitch: Glitch = glitch_scene.instance()
     add_child(glitch)
     glitch.rotate_z(PI)
     glitch.global_transform.origin = player.global_transform.origin
+    glitch.connect("exit", self, "on_exit_glitch")
     
-
+func on_exit_glitch():
+  if !end_loaded:
+    end_loaded = true
+    
+    var end: Spatial = end_scene.instance()
+    add_child(end)
+    end.rotate_z(PI)
+    end.global_transform.origin = player.global_transform.origin

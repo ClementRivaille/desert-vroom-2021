@@ -107,7 +107,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.74902, 0 )
 script = ExtResource( 3 )
 
 [node name="Gimbal" type="Spatial" parent="CameraTarget/Camera"]
+transform = Transform( 1, 0, 0, 0, 0.938968, -0.344004, 0, 0.344004, 0.938968, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="CameraTarget/Camera/Gimbal"]
-transform = Transform( -1, 1.71138e-07, -2.7728e-07, 0, 0.850967, 0.525219, 3.25841e-07, 0.525219, -0.850967, 0, 4.80614, -17.9888 )
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, -12 )
 far = 320.0

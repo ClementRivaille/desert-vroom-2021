@@ -6,6 +6,8 @@ var mouse_sensitivity := 0.003
 onready var gimbal: Spatial = $Gimbal
 onready var camera: Camera = $Gimbal/Camera
 
+var x_inverted := false
+
 func _ready():
   set_as_toplevel(true)
   camera.look_at_from_position(camera.global_transform.origin, global_transform.origin, Vector3.UP)
@@ -15,7 +17,8 @@ func _ready():
 func _unhandled_input(event):
   if event is InputEventMouseMotion:
     if event.relative.x != 0:
-      rotate_object_local(Vector3.UP, -event.relative.x * mouse_sensitivity)
+      var invert := 1 if !x_inverted else -1
+      rotate_object_local(Vector3.UP, -event.relative.x * mouse_sensitivity * invert)
     if event.relative.y != 0:
       gimbal.rotate_object_local(Vector3.RIGHT, -event.relative.y * mouse_sensitivity)
 
