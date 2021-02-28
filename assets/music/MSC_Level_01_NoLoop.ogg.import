@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MSC_Level_01_NoLoop.ogg-65c7dcadcea0c66c101d66538c1c7c73.oggstr"
+
+[deps]
+
+source_file="res://assets/music/MSC_Level_01_NoLoop.ogg"
+dest_files=[ "res://.import/MSC_Level_01_NoLoop.ogg-65c7dcadcea0c66c101d66538c1c7c73.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

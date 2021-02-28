@@ -60,6 +60,11 @@ _global_script_classes=[ {
 "path": "res://scripts/RoadTile.gd"
 }, {
 "base": "Spatial",
+"class": "SoundManager",
+"language": "GDScript",
+"path": "res://scripts/SoundManager.gd"
+}, {
+"base": "Spatial",
 "class": "Space",
 "language": "GDScript",
 "path": "res://scripts/Space.gd"
@@ -85,6 +90,7 @@ _global_script_class_icons={
 "MouseCamera": "",
 "ProceduralDesert": "",
 "RoadTile": "",
+"SoundManager": "",
 "Space": "",
 "SpriteBody": "",
 "UI": ""

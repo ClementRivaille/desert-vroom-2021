@@ -22,6 +22,8 @@ var glitch_loaded := false
 var end_scene: PackedScene = preload("res://scenes/End.tscn")
 var end_loaded := false
 
+onready var sound_manager: SoundManager = $SoundManager
+
 func _ready():
   randomize()
 
@@ -76,7 +78,13 @@ func on_exit_glitch():
     launch_credits()
     
 func launch_credits():
-  events_timer.wait_time = 40.0
+  events_timer.wait_time = 10.0
+  events_timer.start()
+  yield(events_timer, "timeout")
+  
+  sound_manager.play_credits_music()
+  
+  events_timer.wait_time = 30.0
   events_timer.start()
   yield(events_timer, "timeout")
   
