@@ -98,7 +98,6 @@ func deactivate_gravity():
   v_air_boost = 0.4
   air_boost = 200
   linear_velocity = Vector3(0, 4, 0)
-  angular_velocity = angular_velocity * 0.2
   
 func reverse_gravity():
   gravity_scale = -1

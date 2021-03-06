@@ -1,8 +1,28 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=2]
+[gd_resource type="AudioBusLayout" load_steps=5 format=2]
 
 [sub_resource type="AudioEffectAmplify" id=1]
 resource_name = "Amplify"
 volume_db = -50.0
+
+[sub_resource type="AudioEffectEQ" id=2]
+resource_name = "EQ"
+band_db/32_hz = -30.0
+band_db/100_hz = -10.0
+band_db/1000_hz = 6.8
+band_db/3200_hz = -10.4
+band_db/10000_hz = -30.0
+
+[sub_resource type="AudioEffectDistortion" id=3]
+resource_name = "Distortion"
+mode = 1
+keep_hf_hz = 20500.0
+drive = 0.47
+
+[sub_resource type="AudioEffectCompressor" id=4]
+resource_name = "Compressor"
+threshold = -20.3
+ratio = 44.0
+gain = 8.8
 
 [resource]
 bus/1/name = "SFX"
@@ -21,10 +41,16 @@ bus/2/volume_db = 0.0
 bus/2/send = "Master"
 bus/3/name = "Radio"
 bus/3/solo = false
-bus/3/mute = false
+bus/3/mute = true
 bus/3/bypass_fx = false
-bus/3/volume_db = 0.0
-bus/3/send = "Master"
+bus/3/volume_db = 0.464998
+bus/3/send = "SFX"
+bus/3/effect/0/effect = SubResource( 2 )
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource( 3 )
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource( 4 )
+bus/3/effect/2/enabled = true
 bus/4/name = "Motor"
 bus/4/solo = false
 bus/4/mute = false

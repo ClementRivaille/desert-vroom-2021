@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://prefabs/Desert.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://scripts/ProceduralDesert.gd" type="Script" id=2]
@@ -11,8 +11,15 @@
 [ext_resource path="res://assets/environments/reversed_env.tres" type="Environment" id=9]
 [ext_resource path="res://assets/environments/end_environment.tres" type="Environment" id=10]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/music/MSC_Level_01_NoLoop.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/music/MSC_End.ogg" type="AudioStream" id=12]
 [ext_resource path="res://scripts/SoundManager.gd" type="Script" id=13]
+[ext_resource path="res://assets/music/MSC_Level_01_Loop_120BPM.wav" type="AudioStream" id=14]
+[ext_resource path="res://scripts/Radio.gd" type="Script" id=15]
+[ext_resource path="res://assets/sounds/radio_on.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/radio_off.ogg" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/radio_switch.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/music/MSC_Level_03_GlitchyLoop_120BPM.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/radio_switch2.wav" type="AudioStream" id=20]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 96, 10, 96 )
@@ -75,6 +82,19 @@ stream = ExtResource( 12 )
 bus = "Music"
 
 [node name="Tween" type="Tween" parent="SoundManager"]
+
+[node name="Radio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+bus = "Radio"
+script = ExtResource( 15 )
+radio_start = ExtResource( 16 )
+radio_stop = ExtResource( 17 )
+radio_glitch = ExtResource( 18 )
+radio_out = ExtResource( 20 )
+channel_2 = ExtResource( 19 )
+
+[node name="FX" type="AudioStreamPlayer" parent="Radio"]
+bus = "SFX"
 [connection signal="tween_all_completed" from="WorldEnvironment/Tween" to="WorldEnvironment" method="on_transition_complete"]
 [connection signal="timeout" from="GenerationTimer" to="." method="update_player_position"]
 [connection signal="body_entered" from="SkyExit" to="." method="on_exit_sky"]

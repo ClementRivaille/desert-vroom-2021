@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MSC_End.ogg-b4dc870d72a449c8c9eb9ad0fb77ecd4.oggstr"
+
+[deps]
+
+source_file="res://assets/music/MSC_End.ogg"
+dest_files=[ "res://.import/MSC_End.ogg-b4dc870d72a449c8c9eb9ad0fb77ecd4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

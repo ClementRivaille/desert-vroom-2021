@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/radio_switch2.wav-81def624f7ed7a3ea401e9ec58d24558.sample"
+
+[deps]
+
+source_file="res://assets/sounds/radio_switch2.wav"
+dest_files=[ "res://.import/radio_switch2.wav-81def624f7ed7a3ea401e9ec58d24558.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -27,12 +27,11 @@ onready var sound_manager: SoundManager = $SoundManager
 var title_displayed := true
 var off_road := false
 
+onready var radio: Radio = $Radio
+
 func _input(event):
   if event.is_action_pressed("ui_accept") && title_displayed:
-    title_displayed = false
-    ui.hide_title()
-    player.activate()
-    sound_manager.activate_sfx()
+    start()
     
   if event.is_action_pressed("fullscreen"):
     OS.window_fullscreen = !OS.window_fullscreen
@@ -41,6 +40,13 @@ func _input(event):
 
 func _ready():
   randomize()
+  
+func start():
+  title_displayed = false
+  ui.hide_title()
+  player.activate()
+  sound_manager.activate_sfx()
+  radio.active = true
 
 func update_player_position():
   desert_map.update_player_position(player.global_transform.origin)
@@ -58,7 +64,9 @@ func on_exit_sky(_body: PhysicsBody):
     generation_timer.stop()
     
     player.deactivate_gravity()
+    radio.switch_channel()
     
+    desert_map.visible = false
     environment.transition_to(space_environment)
     yield(environment, "transition_done")
     
@@ -73,7 +81,9 @@ func on_exit_space():
     glitch_loaded = true
     
     player.reverse_gravity()
+    desert_map.visible = true
     environment.transition_to(glitch_environment)
+    radio.turn_off()
     yield(environment, "transition_done")
     
     var glitch: Glitch = glitch_scene.instance()
