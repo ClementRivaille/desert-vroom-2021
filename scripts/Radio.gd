@@ -29,7 +29,6 @@ func _input(event):
     AudioServer.set_bus_mute(radio_bus_idx, !mute)
     
 func switch_channel():
-  var mute = AudioServer.is_bus_mute(radio_bus_idx)
   var position := get_playback_position()
   stop()
   stream = radio_glitch

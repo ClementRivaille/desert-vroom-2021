@@ -65,6 +65,7 @@ func on_exit_sky(_body: PhysicsBody):
     
     player.deactivate_gravity()
     radio.switch_channel()
+    sound_manager.activate_reverb()
     
     desert_map.visible = false
     environment.transition_to(space_environment)
@@ -84,6 +85,8 @@ func on_exit_space():
     desert_map.visible = true
     environment.transition_to(glitch_environment)
     radio.turn_off()
+    sound_manager.deactivate_reverb()
+    sound_manager.mute_motor()
     yield(environment, "transition_done")
     
     var glitch: Glitch = glitch_scene.instance()
