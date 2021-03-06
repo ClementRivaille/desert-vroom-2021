@@ -62,7 +62,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="SkyExit" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 340, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 310, 0 )
 collision_layer = 2
 collision_mask = 2
 

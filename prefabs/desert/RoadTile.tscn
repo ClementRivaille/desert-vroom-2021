@@ -23,6 +23,7 @@ flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 8, 1, 1 )
+uv1_offset = Vector3( 0.884, 0.01, 0 )
 
 [sub_resource type="PlaneMesh" id=4]
 material = SubResource( 3 )

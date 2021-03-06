@@ -1,21 +1,164 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/sprites/cloud_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/cloud_6.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/cloud_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/cloud_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/cloud_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/cloud_7.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/cloud_5.png" type="Texture" id=7]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 70, 50 )
+
+[sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 1 )
-metallic_specular = 0.0
 
-[sub_resource type="PlaneMesh" id=3]
-material = SubResource( 2 )
-size = Vector2( 20, 20 )
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 70, 50 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="PlaneMesh" id=6]
+size = Vector2( 70, 65 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="PlaneMesh" id=8]
+size = Vector2( 90, 60 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="PlaneMesh" id=10]
+size = Vector2( 80, 40 )
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="PlaneMesh" id=12]
+size = Vector2( 50, 35 )
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="PlaneMesh" id=14]
+size = Vector2( 100, 60 )
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 6 )
 
 [node name="Clouds" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.6269, 0 )
+transform = Transform( 2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 128, 300, 0 )
+visible = false
 
 [node name="Cloud1" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.2697, 0 )
-mesh = SubResource( 3 )
-material/0 = null
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4219, 0, 26.0132 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Cloud16" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22842, 0, -218.191 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Cloud2" type="MeshInstance" parent="."]
+transform = Transform( -0.964599, 0, -0.263721, 0, 1, 0, 0.263721, 0, -0.964599, -76.0835, 0, 80.7357 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Cloud14" type="MeshInstance" parent="."]
+transform = Transform( -0.977235, 0, 0.212161, 0, 1, 0, -0.212161, 0, -0.977235, 125.57, 0, -204.17 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Cloud3" type="MeshInstance" parent="."]
+transform = Transform( 0.797173, 0, -0.603751, 0, 1, 0, 0.603751, 0, 0.797173, -77.522, 0, -61.3358 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Cloud17" type="MeshInstance" parent="."]
+transform = Transform( 0.797173, 0, -0.603751, 0, 1, 0, 0.603751, 0, 0.797173, 222.184, 0, 172.693 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Cloud4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5265, 0, -68.5607 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Cloud18" type="MeshInstance" parent="."]
+transform = Transform( 0.716168, 0, -0.697928, 0, 1, 0, 0.697928, 0, 0.716168, -156.438, 0, 226.206 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Cloud15" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -224.579, 0, -197.138 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Cloud11" type="MeshInstance" parent="."]
+transform = Transform( 0.504256, 0, 0.863554, 0, 1, 0, -0.863554, 0, 0.504256, -268.979, 0, -65.7856 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Cloud19" type="MeshInstance" parent="."]
+transform = Transform( 0.951675, 0, -0.307108, 0, 1, 0, 0.307108, 0, 0.951675, 108.65, 0, 240.633 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Cloud5" type="MeshInstance" parent="."]
+transform = Transform( 0.999635, 0, 0.0269969, 0, 1, 0, -0.0269969, 0, 0.999635, -195.964, 0, 13.4593 )
+mesh = SubResource( 10 )
+material/0 = SubResource( 11 )
+
+[node name="Cloud12" type="MeshInstance" parent="."]
+transform = Transform( 0.99157, 0, 0.129574, 0, 1, 0, -0.129574, 0, 0.99157, 213.819, 0, 0.509109 )
+mesh = SubResource( 10 )
+material/0 = SubResource( 11 )
+
+[node name="Cloud6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6441, 0, 21.1518 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="Cloud13" type="MeshInstance" parent="."]
+transform = Transform( 0.873781, 0, -0.48632, 0, 1, 0, 0.48632, 0, 0.873781, -245.187, 0, 112.729 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="Cloud10" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.951, 0, -72.6765 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="Cloud8" type="MeshInstance" parent="."]
+transform = Transform( -0.999694, 0, -0.0247286, 0, 1, 0, 0.0247286, 0, -0.999694, -24.4776, 0, 162.444 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="Cloud7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96.8223, 0, 102.004 )
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
+
+[node name="Cloud9" type="MeshInstance" parent="."]
+transform = Transform( -0.997377, 0, -0.0723851, 0, 1, 0, 0.0723851, 0, -0.997377, -83.3552, 0, -166.42 )
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
