@@ -18,7 +18,7 @@ func play_credits_music():
     0, -50, 25,
     Tween.TRANS_SINE, Tween.EASE_IN_OUT)
   tween.interpolate_property(credits_music, "volume_db",
-    -25, 0, 20,
+    -35, 0, 20,
     Tween.TRANS_SINE, Tween.EASE_IN_OUT)
   tween.start()
   credits_music.play()

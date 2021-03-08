@@ -9,7 +9,7 @@ onready var gimbal: Spatial = $Gimbal
 onready var camera: Camera = $Gimbal/Camera
 onready var tween: Tween = $Tween
 
-export(float) var dezoom_length := 84.0
+export(float) var dezoom_length := 90.0
 
 var x_inverted := false
 var active := false
@@ -51,6 +51,6 @@ func dezoom():
   camera.transform.origin.z = -1500
   
   tween.interpolate_property(camera, "size",
-    camera.size, 3000, dezoom_length,
+    camera.size, 4000, dezoom_length,
     Tween.TRANS_SINE, Tween.EASE_IN)
   tween.start()

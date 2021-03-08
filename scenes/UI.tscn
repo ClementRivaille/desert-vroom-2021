@@ -23,6 +23,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RedBg" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.588235, 0.109804, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Credits" type="CenterContainer" parent="."]
 visible = false
 anchor_right = 1.0

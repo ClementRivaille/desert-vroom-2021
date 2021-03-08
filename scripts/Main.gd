@@ -116,7 +116,7 @@ func launch_credits():
   
   sound_manager.play_credits_music()
   
-  events_timer.wait_time = 34.0
+  events_timer.wait_time = 32.0
   events_timer.start()
   yield(events_timer, "timeout")
   
