@@ -5,13 +5,13 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 277.832, 135.9, 587.671 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 279.664, 142.913, 19.9 )
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 35.4981, 38.931, 243.017 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 279.702, 38.931, 34.0131 )
 
 [sub_resource type="BoxShape" id=5]
@@ -31,19 +31,19 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 142.199, -113.094 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 251.261, 142.199, -374.842 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="Car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -251.622, 142.199, -374.842 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape5" type="CollisionShape" parent="Car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 142.199, -592.818 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Entered" type="Area" parent="Car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 105.637, -327.188 )
@@ -53,3 +53,10 @@ collision_mask = 2
 [node name="CollisionShape" type="CollisionShape" parent="Car/Entered"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62634, -27.7869 )
 shape = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 2496.2, 0, 430.314 )
+visible = false
+projection = 1
+size = 5000.0
+far = 8192.0

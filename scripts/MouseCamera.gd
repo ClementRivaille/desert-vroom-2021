@@ -9,7 +9,7 @@ onready var gimbal: Spatial = $Gimbal
 onready var camera: Camera = $Gimbal/Camera
 onready var tween: Tween = $Tween
 
-export(float) var dezoom_length := 80.0
+export(float) var dezoom_length := 84.0
 
 var x_inverted := false
 var active := false
