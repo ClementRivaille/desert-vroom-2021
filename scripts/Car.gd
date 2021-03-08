@@ -124,6 +124,6 @@ func _integrate_forces(state : PhysicsDirectBodyState)->void:
 
 func boost():
   engine_force_value += 150
-  air_boost += 500
+  air_boost = 1700
   v_air_boost = 0.6
   

@@ -7,6 +7,7 @@ export(Array, PackedScene) var rare: Array = []
 var road: PackedScene = preload("res://prefabs/desert/RoadTile.tscn")
 
 export(bool) var road_tile = false
+export(bool) var empty_road = false
 
 export(int) var average_nb := 4
 
@@ -17,10 +18,11 @@ func _ready():
     distribute_objects()
   else:
     var road_node: RoadTile = road.instance()
+    road_node.empty = empty_road
     add_child(road_node)
     
-    # Add one random obkects why not
-    if randf() > 0.5:
+    # Add one random objects why not
+    if !empty_road && randf() > 0.5:
       var prefab = common[randi()%common.size()]
       var child: Spatial = prefab.instance()
       var left = -1 if randf() > 0.5 else 1
