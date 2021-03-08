@@ -15,7 +15,7 @@ albedo_texture = ExtResource( 2 )
 material = SubResource( 1 )
 
 [sub_resource type="SphereShape" id=3]
-radius = 0.963906
+radius = 1.14066
 
 [node name="Thumbleweed" type="Spatial"]
 script = ExtResource( 1 )
@@ -33,5 +33,5 @@ material/0 = null
 [node name="Body" type="StaticBody" parent="Back"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Back/Body"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.833851, 1.35852e-07, 0 )
 shape = SubResource( 3 )
