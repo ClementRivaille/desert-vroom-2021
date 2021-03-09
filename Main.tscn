@@ -33,9 +33,10 @@ end_environment = ExtResource( 10 )
 [node name="DesertMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 256, 256, 256 )
+cell_octant_size = 16
 cell_center_y = false
 data = {
-"cells": PoolIntArray( 0, 0, 536870914 )
+"cells": PoolIntArray( 0, 0, 2 )
 }
 script = ExtResource( 2 )
 __meta__ = {

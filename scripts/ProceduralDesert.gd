@@ -22,11 +22,22 @@ func generate_world():
   # Remove far tiles
   var existing_cells := get_used_cells()
   var removed_cells_coord := []
+  
+  # Octant borders
+  var min_x := (int(player_position.x) - DISTANCE) / cell_octant_size
+  var max_x := (int(player_position.x) + DISTANCE) / cell_octant_size
+  var min_y := (int(player_position.y) - DISTANCE) / cell_octant_size
+  var max_y := (int(player_position.y) + DISTANCE) / cell_octant_size
+  
   for cell_coord in existing_cells:
     if (abs(cell_coord.x - player_position.x) > DISTANCE
       || abs(cell_coord.z - player_position.y) > DISTANCE):
-      set_cell_item(cell_coord.x, cell_coord.y, cell_coord.z, GridMap.INVALID_CELL_ITEM)
-      removed_cells_coord.push_front(Vector2(cell_coord.x, cell_coord.z))
+      var cell_row := int(cell_coord.x) / cell_octant_size
+      var cell_col := int(cell_coord.z) / cell_octant_size
+      # avoid deleting a cell out of octant
+      if cell_row >= min_x && cell_row <= max_x && cell_col >= min_y && cell_col <= max_y:
+        set_cell_item(cell_coord.x, cell_coord.y, cell_coord.z, GridMap.INVALID_CELL_ITEM)
+        removed_cells_coord.push_front(Vector2(cell_coord.x, cell_coord.z))
   # remove objects
   for tile_objects in objects.get_children():
     var obj_coord := world_to_map(tile_objects.transform.origin)
